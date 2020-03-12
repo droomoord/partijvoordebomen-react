@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Cockpit from '../components/Cockpit/Cockpit'
 
-function App() {
-  return (
-    <p>test</p>
-  );
+class App extends Component {
+  render() {
+    return (
+      <Cockpit />
+    );
+  }
 }
 
 export default App;
