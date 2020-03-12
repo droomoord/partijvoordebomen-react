@@ -1,7 +1,12 @@
 import React from 'react';
+import classes from './Cockpit.module.css'
 
 const cockpit = () => {
-  return <p>Hoi</p>;
+  return (
+      <div className={classes}>
+          <p>hoi</p>
+      </div>
+  )
 };
 
 export default cockpit;

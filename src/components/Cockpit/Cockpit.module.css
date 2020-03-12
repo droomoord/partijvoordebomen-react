@@ -1,0 +1,10 @@
+/* note to self: fix background */
+
+body{
+    background-image: url('../../assets/img/bos.jpg');
+    background-size: contain;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    height: 2000px;
+}
