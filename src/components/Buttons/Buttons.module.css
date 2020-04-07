@@ -1,0 +1,19 @@
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-image: linear-gradient(
+    to right,
+    rgb(209, 219, 208),
+    rgb(186, 228, 184)
+  );
+  opacity: 0.9;
+}
+
+@media (max-width: 330px) {
+  .buttons {
+    font-size: 0.9em;
+  }
+}

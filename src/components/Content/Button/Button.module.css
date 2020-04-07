@@ -1,0 +1,15 @@
+.Button{
+    margin-top: 10px;
+    outline: none;
+    color: white;
+    font-size: inherit;
+    margin-right: 10px;
+}
+
+.Red{
+    background-color: red;
+}
+
+.Green{
+    background-color: rgb(22, 221, 22);
+}

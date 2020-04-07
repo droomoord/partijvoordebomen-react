@@ -1,0 +1,31 @@
+.button {
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 0.8em;
+  width: 100%;
+  margin: 0 1%;
+  border-top: none;
+  height: 30px;
+  border-radius: 0 0 15px 15px;
+  background-color: rgb(184, 211, 190);
+  box-shadow: 2px 2px rgb(5, 48, 5);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: rgb(43, 39, 34);
+}
+
+.button:focus {
+  outline: none;
+}
+
+
+@media (max-width: 600px) {
+  .button {
+    border-radius: 0;
+    font-size: 0.8em;
+    margin: 0;
+    padding: 2px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+  }
+}

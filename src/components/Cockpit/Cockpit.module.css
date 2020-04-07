@@ -1,10 +1,18 @@
-/* note to self: fix background */
+.cockpit {
+  margin: 5%;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 40px rgba(70, 67, 67, 0.836);
+}
 
-body{
-    background-image: url('../../assets/img/bos.jpg');
-    background-size: contain;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: 100vw;
-    height: 2000px;
+.msg {
+  color: red;
+  text-align: right;
+  margin-right: 10px;
+}
+
+@media (max-width: 900px) {
+  .cockpit {
+    margin: 0;
+  }
 }
