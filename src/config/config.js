@@ -1,5 +1,5 @@
 const config = {
-  apiUrl: 'http://localhost:5001',
+  prefix: "https://partij-voor-de-bomen.herokuapp.com",
 };
 
 export default config;

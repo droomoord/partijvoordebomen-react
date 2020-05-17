@@ -1,37 +1,35 @@
-import React, { Component } from 'react';
-import Cockpit from '../components/Cockpit/Cockpit';
-import config from '../config/config';
-import classes from './App.module.css';
-import axios from 'axios';
+import React, { Component } from "react";
+import Cockpit from "../components/Cockpit/Cockpit";
+import classes from "./App.module.css";
+import axios from "axios";
+import config from "../config/config";
 
 class App extends Component {
   state = {
-    buttons: [''],
+    buttons: [""],
     content: {
-      category: '',
+      category: "",
       paragraphs: [],
       collumns: 2,
       asymmetric: false,
     },
     showLoginFields: false,
-    username: '',
-    password: '',
+    username: "",
+    password: "",
     isLoggedIn: false,
   };
 
   getButtonNames = async () => {
     try {
-      const getButtons = await axios.get(`${config.apiUrl}/buttons`);
+      const getButtons = await axios.get(`${config.prefix}/buttons`);
       this.setState({
         buttons: getButtons.data.buttons,
       });
 
       const key = this.state.buttons[0];
-      const getFirstButtonContent = await axios.get(
-        `${config.apiUrl}/content/${key}`
-      );
+      const getFirstButtonContent = await axios.get(`${config.prefix}/content/${key}`);
       const content = getFirstButtonContent.data.content;
-      document.querySelector('button').classList.add('active');
+      document.querySelector("button").classList.add("active");
       this.setState({
         content,
       });
@@ -56,12 +54,12 @@ class App extends Component {
   };
 
   changedHandler = (event) => {
-    if (event.target.placeholder === 'username') {
+    if (event.target.placeholder === "username") {
       this.setState({
         username: event.target.value,
       });
     }
-    if (event.target.placeholder === 'password') {
+    if (event.target.placeholder === "password") {
       this.setState({
         password: event.target.value,
       });
@@ -72,7 +70,7 @@ class App extends Component {
     try {
       document.documentElement.scrollTop = 0;
       const key = event.target.innerText;
-      const apiCall = await axios.get(`${config.apiUrl}/content/${key}`);
+      const apiCall = await axios.get(`${config.prefix}/content/${key}`);
       const content = apiCall.data.content;
       this.setState({
         content,
@@ -84,12 +82,12 @@ class App extends Component {
 
   submitHandler = async () => {
     try {
-      if (this.state.username === '' || this.state.password === '') {
-        alert('please give a username and password');
+      if (this.state.username === "" || this.state.password === "") {
+        alert("please give a username and password");
         return;
       }
 
-      const apiCall = await axios.post(`${config.apiUrl}/login`, {
+      const apiCall = await axios.post(`${config.prefix}/login`, {
         username: this.state.username,
         password: this.state.password,
       });
@@ -103,13 +101,13 @@ class App extends Component {
       if (this.state.isLoggedIn) {
         document.documentElement.scrollTop = 0;
       } else {
-        alert('Wrong username and/or password');
+        alert("Wrong username and/or password");
         return;
       }
 
       this.setState({
-        username: '',
-        password: '',
+        username: "",
+        password: "",
         showLoginFields: false,
       });
     } catch (error) {
@@ -118,10 +116,10 @@ class App extends Component {
   };
 
   updateContent = () => {
-    alert('saved!');
+    alert("saved!");
     const update = async () => {
       try {
-        await axios.put(`${config.apiUrl}/content`, {
+        await axios.put(`${config.prefix}/content`, {
           content: this.state.content,
         });
       } catch (error) {
@@ -134,7 +132,7 @@ class App extends Component {
   dontUpdateContent = async () => {
     try {
       const key = this.state.content.category;
-      const apiCall = await axios.get(`${config.apiUrl}/content/${key}`);
+      const apiCall = await axios.get(`${config.prefix}/content/${key}`);
       const content = apiCall.data.content;
       this.setState({
         content,
@@ -173,7 +171,7 @@ class App extends Component {
     const content = { ...this.state.content };
 
     if (add) {
-      content.paragraphs.push('');
+      content.paragraphs.push("");
     }
 
     if (!add) {

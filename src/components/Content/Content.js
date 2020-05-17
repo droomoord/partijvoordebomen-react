@@ -57,7 +57,7 @@ const content = (props) => {
     collumnsInput = (
       <div style={{ display: 'flex' }}>
         <div className={classes.collumnsInput}>
-          <span>Number of collumns:</span>
+          <span>Number of columns:</span>
           <input
             className={props.isAsymmetric ? null : classes.outline}
             disabled={props.isAsymmetric}
