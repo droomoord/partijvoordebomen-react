@@ -1,4 +1,4 @@
-This is a website I made for a local political party. You can visit it at [http://www.partijvoordebomenoptexel.nl] (http://www.partijvoordebomenoptexel.nl). <br />
+This is a website I made for a local political party. You can visit it at http://www.partijvoordebomenoptexel.nl <br />
 
 The front-end is made with React and hosted on Netflify. An admin can log-in on de website, and change the website's content. It makes requests to an API that I made, that is hosted somewhere else. The API only takes requests from http://www.partijvoordebomenoptexel.nl.
 
